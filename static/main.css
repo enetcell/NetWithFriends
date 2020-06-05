@@ -1,0 +1,197 @@
+body {
+	position: absolute;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-items: baseline;
+	font-size: 1em;
+	padding: 1em;
+}
+progress {
+	width: 100%;
+}
+.game-board {
+	border-spacing: 0;
+	table-layout: fixed;
+}
+#game-style-controls {
+	padding-bottom: 1em;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+.game-control {
+	padding: 0.5em;
+}
+#game-container {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+#scoreList {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 0.5em;
+}
+game {
+	padding-top: 0.3em;
+}
+tr, td {
+	border: 1px solid black;
+	text-align: center;
+}
+td {
+	width: 2em;
+	height: 2em;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	transition: 0.1s;
+}
+.color-square {
+  width: 1em;
+  height: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.2em;
+  float: left;
+}
+.color-panel {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.u {
+	background-image: url("images/end.png");
+	transform: rotate(180deg);
+}
+
+.u.a{
+	background-image: url("images/end_a.png");
+}
+
+.d {
+	background-image: url("images/end.png");
+	transform: rotate(0deg);
+}
+
+.d.a{
+	background-image: url("images/end_a.png");
+}
+
+.r {
+	background-image: url("images/end.png");
+	transform: rotate(270deg);
+}
+
+.r.a{
+	background-image: url("images/end_a.png");
+}
+
+.l{
+	background-image: url("images/end.png");
+	transform: rotate(90deg);
+}
+
+.l.a{
+	background-image: url("images/end_a.png");
+}
+
+/* Straight */
+.u.d{
+	background-image: url("images/straight.png");
+}
+
+.u.d.a{
+	background-image: url("images/straight_a.png");
+}
+
+.l.r{
+	background-image: url("images/straight.png");
+	transform: rotate(90deg);
+}
+
+.l.r.a{
+	background-image: url("images/straight_a.png");
+}
+
+/* Corners */
+.u.r{
+	background-image: url("images/corner.png");
+	transform: rotate(0deg);
+}
+
+.u.r.a{
+	background-image: url("images/corner_a.png");
+}
+
+.u.l{
+	background-image: url("images/corner.png");
+	transform: rotate(270deg);
+}
+
+.u.l.a{
+	background-image: url("images/corner_a.png");
+}
+
+.d.r{
+	background-image: url("images/corner.png");
+	transform: rotate(90deg);
+}
+
+.d.r.a{
+	background-image: url("images/corner_a.png");
+}
+
+.d.l{
+	background-image: url("images/corner.png");
+	transform: rotate(180deg);
+}
+
+.d.l.a{
+	background-image: url("images/corner_a.png");
+}
+
+/* T split */
+.u.r.l{
+	background-image: url("images/tsplit.png");
+	transform: rotate(270deg);
+}
+
+.u.r.l.a{
+	background-image: url("images/tsplit_a.png");
+}
+
+.r.d.l{
+	background-image: url("images/tsplit.png");
+	transform: rotate(90deg);
+}
+
+.r.d.l.a{
+	background-image: url("images/tsplit_a.png");
+}
+
+.d.l.u{
+	background-image: url("images/tsplit.png");
+	transform: rotate(180deg);
+}
+
+.d.l.u.a{
+	background-image: url("images/tsplit_a.png");
+}
+
+.u.r.d{
+	background-image: url("images/tsplit.png");
+	transform: rotate(0deg);
+}
+
+.u.r.d.a{
+	background-image: url("images/tsplit_a.png");
+}
+
+/* Cross */
+.u.r.d.l{
+	background-image: url("images/cross.png");
+}
+
+.u.r.d.l.a{
+	background-image: url("images/cross_a.png");
+

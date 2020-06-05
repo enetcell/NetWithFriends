@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Net with friends</title>
+	<link href="static/main.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body ng-app="net-game">
+	<div id="game-container" ng-controller="GameBoardController">
+		<div id="game-style-controls">
+			<div class="game-control">Cell size: <input type="number" ng-model="cellSize"/></div>
+			<div class="game-control">
+				<div class="color-square" ng-style="{'background':userColor}"></div>
+				<button ng-click="rerollColor()">Reroll color</button>
+			</div>
+			<div class="game-control">Border css: <input type="text" ng-model="borderStyle"/></div>
+		</div>
+		<table class="game-board">
+			<tr ng-repeat="row in game.grid track by $index">
+				<td ng-style="{ 'width': cellSize/10 + 'em', 'height': cellSize/10 + 'em','min-width': cellSize/10+'em','min-height': cellSize/10 + 'em', 'border': borderStyle +' '+col.color}" 
+						ng-repeat="col in row track by $index" 
+						ng-class="{'u':col.U, 'r':col.R, 'd':col.D, 'l':col.L, 'a':col.active}" 
+						ng-click="rotate($event, $parent.$index, $index)"></td>
+			</tr>
+			
+		</table>
+		<p>Solved {{lit}} out of {{game.y * game.x}}. Field is {{game.wrapped?'wrapped':'not wrapped'}}<br>
+		   Currently playing: {{game.players}}</p>
+		<progress class="progress-striped active" max="{{game.y * game.x}}" value="{{lit}}"/>
+	</div>
+	<div id="scoreList" ng-controller="ScoreController">
+		<h2>Previous games:</h2>
+		<game ng-repeat="g in previousGames" game-data="g"></game>
+	</div>
+	<script src="static/randomColor.js"></script>
+	<script src="static/cell.js"></script>
+	<script src="static/app.js"></script>
+</body>
+</html>

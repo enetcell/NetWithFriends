@@ -1,0 +1,16 @@
+{
+  "name": "net-game",
+  "version": "0.0.1",
+  "description": "Multiplayer version of Net game",
+  "main": "node-server.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
